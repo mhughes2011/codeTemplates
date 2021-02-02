@@ -1,0 +1,52 @@
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+
+	.main-header,
+	.main-nav,
+  .row {
+		display: flex;
+	}
+
+	.main-header {
+		flex-direction: column;
+		align-items: center;
+	}
+
+/* This makes it to where the columns will take up 50% of the row and ensures that all columns take up all available space */
+  .col {
+    flex: 1 50%;
+  }
+
+/* This makes sure the third col wraps to a new row */
+  .row {
+    flex-wrap: wrap;
+  }
+
+/* This is used to move the secondary column to the first position on screens above mobile.  This is to make the primary column in the middle */
+  .secondary {
+    order: -1;
+  }
+
+}
+
+@media (min-width: 1025px) {
+
+	.main-header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+/* This is all that's needed to ensure all three cols are evenly spaced on one line above 1025px */
+  .col {
+    flex-basis: 0;
+  }
+
+/* This gives the primary column more space and signifies it's importance relative to the other columns */
+  .primary {
+    flex-grow: 1.4;
+  }
+
+}

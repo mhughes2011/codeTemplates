@@ -1,0 +1,39 @@
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+
+	.main-header,
+	.main-nav,
+	.row,
+  .col /*This makes the columns flex containers as well*/ {
+		display: flex;
+	}
+
+	.main-header {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.col {
+		flex: 1;
+    flex-direction: column;
+	}
+
+/* This aligns the buttons to the bottom of the columns */
+  .button {
+    margin-top: auto;
+    align-self: center; /* This removes the default stretch of the button to fill the column width */
+  }
+
+}
+
+@media (min-width: 1025px) {
+
+	.main-header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+}

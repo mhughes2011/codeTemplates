@@ -1,0 +1,41 @@
+/* ================================= 
+  Base Styles
+==================================== */
+
+/* This is a base style for mobile first design approach */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* The row class is called because it's all of the content in the body below the header nav and banner. This makes it take up all available space on the viewport, which is why you need 100vh for the body.  This also helps with varying height footers and keeps them sticky at the bottom */
+  .row {
+    flex: 1;
+  }
+  
+  /* ================================= 
+    Media Queries
+  ==================================== */
+  
+  @media (min-width: 769px) {
+  
+      .main-header,
+      .main-nav {
+          display: flex;
+      }
+      .main-header {
+          flex-direction: column;
+          align-items: center;
+      }
+  
+  }
+  
+  @media (min-width: 1025px) {
+  
+      .main-header {
+          flex-direction: row;
+          justify-content: space-between;
+      }
+  
+  }
