@@ -1,0 +1,15 @@
+/* UI element states pseudo-classes ------------ */
+
+input:focus,
+textarea:focus {
+    border-color: #52bab3;
+}
+
+input:disabled {
+    background: #ddd;
+}
+
+/* This is an attribute selector for input with type of checkbox, with the psuedo class of checked, and the plus sign targets the adjacent sibling element of label */
+input[type="checkbox"]:checked + label {
+    font-weight: bold;
+}

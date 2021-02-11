@@ -1,0 +1,54 @@
+/* Pseudo-elements -------------------------------- */
+
+.intro::first-line {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+/* This is a drop cap, editing done to the first letter of an element */
+.intro::first-letter {
+    float: left;
+    font-size: 80px;
+    color: white;
+    padding: 5px 10px;
+    background: #384047;
+    margin: 10px 10px 0 0;
+    border-radius: 5px;
+    line-height: 1;
+}
+
+/* Inserts content artifically before and after real HTML content.  Quotes are needed around strings. */
+.jpg::before {
+    content: url(../img/icn-picture.svg);
+    margin-right: 8px;
+}
+
+.zip::before {
+    content: url(../img/icn-zip.svg);
+    margin-left: 8px;
+}
+
+/* This is an empty pseudo-element that doesn't have any content but it allows us to make different shapes.  The content property is always needed for ::before and ::after */
+h1::before,
+h1::after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: coral;
+    margin: 0 10px;
+}
+
+/* The attr() function allows you to append any attribute information to an element.  It gets appeneded to the element as a sub-child. */
+.d-loads a::after {
+    content: attr(title);
+    display: inline-block;
+    color: initial;
+    font-size: .65em;
+    margin-left: 5px;
+}
+
+.d-loads a {
+    border: solid 1px;
+}
