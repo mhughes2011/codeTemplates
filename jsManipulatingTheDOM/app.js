@@ -6,6 +6,32 @@ const descriptionBtn = document.querySelector('button.description');//button.des
 const addItemInput = document.querySelector('input.addItemInput');
 const addItemBtn = document.querySelector('button.addItemBtn');
 const removeItemBtn = document.querySelector('button.removeItemBtn');
+//const listItems = document.getElementsByTagName('li');//This gets all of the list items and stores them in an array
+
+//This is used to apply the event listeners on each individual li but this causes bubbling.  Bubbling is what causes an error to occur when you delete a list item them add it back.  The event listeners will no longer have their effect.
+////This loop is used to go through the array of list items and add the events to each li.
+//for (let i=0; i < listItems.length; i++) {
+//  //This addEventListener is what is used to trigger the callback function when it's moused over.
+//  listItems[i].addEventListener('mouseover', () => {
+//    listItems[i].textContent = listItems[i].textContent.toUpperCase();//This is the callback function that's used to turn all of letters to uppercase.                      
+//  });
+//   listItems[i].addEventListener('mouseout', () => {
+//    listItems[i].textContent = listItems[i].textContent.toLowerCase();                          
+//  });
+//}
+
+//You can put the event listeners as close to the li elements we want by targeting the div with the class list, which we already assigned to listDiv up top.  The event.target.tagName returns an element in all caps.
+listDiv.addEventListener('mouseover', (event) => {
+  if (event.target.tagName == 'LI') {
+    event.target.textContent = event.target.textContent.toUpperCase();
+  }
+});
+ listDiv.addEventListener('mouseout', (event) => {
+  if (event.target.tagName == 'LI') {
+    event.target.textContent = event.target.textContent.toLowerCase();
+  }
+});
+
 
 toggleListBtn.addEventListener('click', () => {
   if (listDiv.style.display == 'none') {
