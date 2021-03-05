@@ -1,0 +1,23 @@
+/* ===================================== 
+   Grid & Flexbox Layout
+======================================== */
+
+/* This makes the main-content div a grid container */
+.main-content {
+  width: 95%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 20px;
+}
+
+/* This makes the cards within the main-content a flex container */
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* This pins all of the buttons within all of the cards to the bottom of the card */
+.btn {
+  margin-top: auto;
+}
