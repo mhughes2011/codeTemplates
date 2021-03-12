@@ -14,14 +14,17 @@
     <h1>HTML Video and Audio</h1>
     
     <div class="wrapper">
-<!-- This is the built in video controls that all browsers should have.  Add autoplay to have it play on load. You can put the source and type attributes in the opening video tag or like it's shown below.  You would use the below for multiple file formats for the video. -->
+      
       <h2>Video Example</h2>
+      
       <video controls>
         <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.mp4" type="video/mp4">
         <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge.ogg" type="video/ogg">
+        <track label="English" kind="subtitles" srclang="en" src="bridge-captions.vtt" default>
       </video>
       
       <h2>Audio Example</h2>
+      
       <audio controls>
         <source src="http://treehouse-code-samples.s3.amazonaws.com/html-video-and-audio/bridge-audio.mp3" type="audio/mp3">
       </audio>
