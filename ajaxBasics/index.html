@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+  <title>AJAX with JavaScript</title>
+  <script>
+    var xhr = new XMLHttpRequest(); //This is needed for every call that needs to be made
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        document.getElementById('ajax').innerHTML = xhr.responseText; //responseText is what the server sends back.
+      }
+    };
+    xhr.open('GET', 'sidebar.html');
+    function sendAJAX() {
+      xhr.send();
+      document.getElementById('load').style.display = 'none';
+    }
+  </script>
+</head>
+<body>
+<!--This needs to have a webserver running locally in order to view this.-->
+  <div class="grid-container centered">
+    <div class="grid-100">
+      <div class="contained">
+        <div class="grid-100">
+          <div class="heading">
+            <h1>Bring on the AJAX</h1>
+            <button id="load" onclick="sendAJAX()">Bring It!</button>
+          </div>
+          <div id="ajax">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
